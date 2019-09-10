@@ -44,7 +44,7 @@ spec:
 
         ENV _HANDLER "${inputs.params.HANDLER}"
 
-        COPY . .
+        COPY "${inputs.params.DIRECTORY}" .
         RUN if [ -f requirements.txt ]; then pip3.7 install -r requirements.txt ;fi
 
         ENTRYPOINT ["/opt/aws-custom-runtime"]
